@@ -1,17 +1,17 @@
 
 
 public class service implements Comparable<service>{
-    public int id;
+    public static int id = -1;
     public String user;
     public String worker = "";
     public int priority;
     public int duration;
     public double workCost = -1;
+    
 
     public service (String user, int priority, int duration) {
-        
+        id  += 1;
         this.user = user;
-        
         this.priority = priority;
         this.duration = duration;
         
@@ -25,6 +25,7 @@ public class service implements Comparable<service>{
     }
 
     //Getter (ritorna i valori)
+   public int getId() {return id; }
    public String getUser() {return user; }
    public String getWorker() {return worker; }
    public int getPriority() {return priority; }
@@ -41,6 +42,6 @@ public class service implements Comparable<service>{
 
    public String toString() {
     return id + priority + user + worker + duration + workCost;
-}
+    }
 
 }
